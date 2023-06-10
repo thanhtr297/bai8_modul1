@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="2">Kiểm tra số ngày trong tháng</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" id="input" placeholder="Nhập tháng">
+            <button onclick="test()">
+                Kiểm tra
+            </button>
+        </td>
+    </tr>
+</table>
+<p id="result">Đây là kết quả</p>
+</body>
+<script>
+    function test() {
+        let b = document.getElementById('input').value;
+        let a = parseInt(b);
+        switch (a) {
+            case (1):
+            case (3):
+            case (5):
+            case (7):
+            case (8):
+            case (10):
+            case (12):
+                document.getElementById('result').innerHTML = 'Tháng ' + a + ' có 31 ngày!';
+                break;
+            case (4):
+            case (6):
+            case (9):
+            case (11):
+                document.getElementById('result').innerHTML = 'Tháng ' + a + ' có 30 ngày!';
+                break;
+            case (2):
+                document.getElementById('result').innerHTML = 'Tháng ' + a + ' có 28 hoặc 29 ngày!';
+            break;
+                default:
+                document.getElementById('result').innerHTML = 'Vui lòng nhập lại số tháng!'
+        }
+    }
+</script>
+</html>
