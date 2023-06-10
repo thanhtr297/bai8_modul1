@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="2" style="font-size: large">Tính chỉ số cân nặng</th>
+
+    </tr>
+    <tr>
+        <td>Nhập cân nặng: (kg)</td>
+        <td><input type="number" id="weight"></td>
+    </tr>
+    <tr>
+        <td>Nhập chiều cao: (m)</td>
+        <td><input type="number" id="height"></td>
+    </tr>
+    <tr>
+        <td>
+            <button id="test" onclick="test()"> Kiểm tra</button>
+        </td>
+
+    </tr>
+
+</table>
+<p id="result"></p>
+</body>
+<script>
+function test() {
+    let a = document.getElementById('weight').value;
+    let b = document.getElementById('height').value;
+    let bmi = a / (b ^ 2);
+    let result;
+    if (bmi < 18.5) {
+        result = '.Bạn quá gầy, hãy ăn thêm nhé!'
+    } else if (bmi < 25) {
+        result = '.Bạn bình thường!';
+    } else if (bmi < 30) {
+        result = '.Bạn thừa cân, hãy cân đối lại!'
+    } else {
+        result = '.Bạn đã bị béo phì, giảm cân gấp!'
+    }
+    document.getElementById('result').innerHTML = 'Chỉ số BMI của bạn là: ' + bmi + result;
+}
+</script>
+</html>
